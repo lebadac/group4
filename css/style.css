@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: url('https://wallpaperaccess.com/full/9216977.gif');
+    background-size: cover; /* Ensure the background image covers the entire background area */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center; /* Center the background image */
+    min-height: 100vh; /* Set a minimum height to ensure the background image is fully visible */
+}
+
+
+
+.form-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-control input, .form-control select {
+    flex: 1;
+    padding: .4rem .5rem;
+    border: 1px solid #858585;
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+}
+
+
+.form-control button {
+    background-color: #76df76;
+    border: none;
+    color: white;
+    padding: .4rem .8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-control button:hover {
+    background-color: green;
+}
+
+.date-hour {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1rem 1.5rem 1rem;
+    font-size: 16px;
+    color: #102f5e;
+}
+
+button {
+    background-color: darkorange;
+    color: #102f5e;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: .8rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.4s;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: orangered;
+    color: white;
+}
+
+button > i {
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+.todo-container {
+    background-color: rgba(236, 240, 241, 0.5);
+    border-radius: 15px;
+    width: 650px;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container header {
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+header > h1 {
+    padding-left: 16px;
+    border-left: 5px solid #e74c3c;
+}
+
+#todo-form, #edit-form {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#todo-form > p, #edit-form > p {
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0.2rem;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.todo span.task-type {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.todo button {
+    margin-left: 0.4rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #ecf0f1;
+    color: #102f5e;
+}
+
+.todo button:hover {
+    background-color: #395169;
+    color: #ecf0f1;
+}
+
+.todo.done {
+    background-color: #13dda0; 
+}
+
+.todo.done h3 {
+    color: white;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.todo.done button:hover {
+    background-color: #ecf0f1;
+    color: #102F5e;
+}
+
+#todo-list {
+    max-height: 340px;
+    overflow: auto;
+}
+
+.controls {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filters span {
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.filters span.active {
+    font-weight: bold;
+    background-color: rgba(54, 132, 223, 0.2);
+}
+
+.filters span:hover {
+    background-color: rgba(54, 132, 223, 0.2);
+}
+
+.clear-btn {
+    background-color: #f74c4c;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 8px;
+}
+
+.clear-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Add this CSS code */
+#filter-select {
+    flex: 1;
+    padding: .4rem .5rem;
+    border: 1px solid #858585;
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    background-color: #fff; /* Set background color */
+    color: #777; /* Set text color */
+}
+
+#filter-select:hover,
+#filter-select:focus {
+    border-color: #395169; /* Set border color on hover/focus */
+}
+
+#filter-select option {
+    background-color: #fff; /* Set background color for options */
+    color: #102f5e; /* Set text color for options */
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .todo-container {
+        width: 90%; /* Thay đổi chiều rộng container cho thiết bị nhỏ hơn */
+    }
+
+    .form-control input, .form-control select {
+        width: 70%; /* Thay đổi chiều rộng input và select cho thiết bị nhỏ hơn */
+    }
+
+    .form-control button {
+        width: 25%; /* Thay đổi chiều rộng của nút cho thiết bị nhỏ hơn */
+    }
+
+    .date-hour {
+        font-size: 14px; /* Giảm kích thước chữ cho thiết bị nhỏ hơn */
+    }
+
+    .todo h3 {
+        font-size: 0.8rem; /* Giảm kích thước chữ cho thiết bị nhỏ hơn */
+    }
+}
+
+.controls .filters {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    gap: 1rem; /* Add some space between flex items */
+}
+
+.controls .filters select {
+    flex-grow: 1; /* Allow the select element to grow and fill available space */
+    margin-right: 0.5rem; /* Add some spacing between the select and other elements */
+    margin-bottom: 0.5rem; /* Add some spacing below the select element */
+}
+
+.todo span.task-type[data-color="urgent-important"] {
+    color: red !important; /* Màu cho loại "Urgent and Important" */
+}
+
+.todo span.task-type[data-color="urgent-not-important"] {
+    color: orange !important; /* Màu cho loại "Urgent and Not Important" */
+}
+
+.todo span.task-type[data-color="not-urgent-important"] {
+    color: blue !important; /* Màu cho loại "Not Urgent and Important" */
+}
+
+.todo span.task-type[data-color="not-urgent-not-important"] {
+    color: green !important; /* Màu cho loại "Not Urgent and Not Important" */
+}
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title> Yeah NoteWork </title>
+    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Iconscout Link For Icons -->
+    <script src="https://kit.fontawesome.com/9a8f1a44f3.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="time()">
+    <div class="todo-container">
+        <div class="date-hour">
+            <div id="date">Date</div>
+            <div id="hour">Hour</div>
+        </div>
+        <header>
+            <h1>To Do List</h1>
+        </header>
+        <!-- ---- Add Tasks --- -->
+        <form action="" id="todo-form">
+            <p>Add Your Task Here</p>
+            <div class="form-control">
+                <input type="text" id="todo-input" placeholder="Type here about your next task">
+                <select id="task-type">
+                    <option value="urgent-important">Urgent and Important</option>
+                    <option value="urgent-not-important">Urgent and Not Important</option>
+                    <option value="not-urgent-important">Not Urgent and Important</option>
+                    <option value="not-urgent-not-important">Not Urgent and Not Important</option>
+                </select>
+                <button type="submit">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        <!-- ---- Edit The Tasks --- -->
+        <form action="" id="edit-form" class="hide">
+            <p>Edit Your Task</p>
+            <div class="form-control">
+                <input type="text" id="edit-input" placeholder="Type here about your next task">
+                <select id="edit-task-type">
+                    <option value="urgent-important">Urgent and Important</option>
+                    <option value="urgent-not-important">Urgent and Not Important</option>
+                    <option value="not-urgent-important">Not Urgent and Important</option>
+                    <option value="not-urgent-not-important">Not Urgent and Not Important</option>
+                </select>
+                <button type="submit" id="edittask">
+                    <i class="fa-solid fa-check-double"></i>
+                </button>
+            </div>
+            <button type="button" id="cancel-edit-btn">Cancel</button>
+        </form>
+        <!-- --- Filters and Controls --- -->
+        <div class="controls hide" id="controls">
+            <div class="filters">
+                <span id="all" class="active">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+                <select id="filter-select">
+                    <option value="all">All</option>
+                    <option value="urgent-important">Urgent and Important</option>
+                    <option value="urgent-not-important">Urgent and Not Important</option>
+                    <option value="not-urgent-important">Not Urgent and Important</option>
+                    <option value="not-urgent-not-important">Not Urgent and Not Important</option>
+                </select>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+        <!-- ---- Task List --- -->
+        <div class="todo-list" id="todo-list">
+            <!-- <div class="todo">
+                <h3>Some Default Task</h3>
+                <span class="task-type" style="color: red">urgent-important</span>
+                <button class="finish-todo">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="edit-todo">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="remove-todo">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div> -->
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/storenote.js"></script>
+    <script src="./js/fetchnote.js"></script>
+</body>
+
+</html>
